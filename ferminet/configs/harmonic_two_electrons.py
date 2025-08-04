@@ -22,12 +22,12 @@ def get_config():
   """Returns config for running unpolarised 14 electron gas with FermiNet."""
   # Get default options.
   cfg = base_config.default()
-  cfg.system.electrons = (1,0)
+  cfg.system.electrons = (1,1)
   # A ghost atom at the origin defines one-electron coordinate system.
   # Element 'X' is a dummy nucleus with zero charge
   cfg.pretrain.method = None
   cfg.system.molecule = [system.Atom("X", (0., 0.))]
-  cfg.system.make_local_energy_fn = "ferminet.hamiltonian_harmonic.local_energy"
+  cfg.system.make_local_energy_fn = "ferminet.hamiltonian_harmonic_2.local_energy"
   cfg.network.full_det = True
   cfg.optim.reset_if_nan = True
   cfg.system.ndim = 2

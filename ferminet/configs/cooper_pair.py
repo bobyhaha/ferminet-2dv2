@@ -9,7 +9,7 @@ def get_config():
   # Get default options.
   cfg = base_config.default()
   # Set up molecule
-  cfg.system.electrons = (1,1)
+  cfg.system.electrons = (2,0)
   cfg.system.molecule = [system.Atom("X", (0., 0.))]
   cfg.system.make_local_energy_fn =  "ferminet.hamiltonian_gaussian.local_energy"
   # Set training hyperparameters
